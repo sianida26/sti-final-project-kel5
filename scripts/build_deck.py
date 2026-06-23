@@ -116,12 +116,11 @@ text(s, 9.75, 5.78, 2.5, 0.8, [[('23', 30, CYAN, FBLACK)], [('Juni 2026', 13, NA
 # ---------- 2. AGENDA ----------
 n += 1; s = slide(); header(s, 'Outline', 'AGENDA ', 'PRESENTASI', n)
 items = [
-    ('01', 'Latar Belakang & Tujuan', 'Konteks dua studi kasus dan pertanyaan bisnis yang ingin dijawab'),
+    ('01', 'Latar Belakang & Tujuan', 'Konteks studi kasus dan pertanyaan bisnis yang ingin dijawab'),
     ('02', 'Metodologi CRISP-DM', 'Kerangka kerja pengolahan data dari awal hingga akhir'),
     ('03', 'Manajemen Proyek', 'Pelacakan pekerjaan kelompok lewat GitHub Projects'),
-    ('04', 'Studi Kasus 1: Inventory CGS-1', 'Pemantauan kesiapan dan kalibrasi instrumen'),
-    ('05', 'Studi Kasus 2: Penjualan Ritel', 'Tren, pendorong revenue, musiman, dan diskon'),
-    ('06', 'Kesimpulan & Rekomendasi', 'Temuan utama dan langkah tindak lanjut'),
+    ('04', 'Studi Kasus: Inventory CGS-1', 'Pemantauan kesiapan dan kalibrasi instrumen'),
+    ('05', 'Kesimpulan & Rekomendasi', 'Temuan utama dan langkah tindak lanjut'),
 ]
 y = 1.66
 for num, t, d in items:
@@ -133,30 +132,23 @@ for num, t, d in items:
 # ---------- 3. LATAR BELAKANG ----------
 n += 1; s = slide(); header(s, 'Pendahuluan', 'LATAR BELAKANG & ', 'TUJUAN', n)
 text(s, 0.9, 1.62, 11.6, 0.7,
-     [[('Kelompok mengambil ', 14, DARK, FBODY), ('dua studi kasus nyata', 14, CYAN, FSEMI),
+     [[('Kelompok mengambil ', 14, DARK, FBODY), ('studi kasus nyata', 14, CYAN, FSEMI),
        (' dari lingkungan kerja anggota, lalu mengolah datanya secara terstruktur mengikuti CRISP-DM hingga menghasilkan dashboard pemantauan.', 14, DARK, FBODY)]],
      sp_after=0, line=1.18)
-cards = [
-    (0.9, 'STUDI KASUS 1', 'Inventory Instrumen CGS-1',
-     ['Memantau kesiapan instrumen lapangan (transmitter, valve, actuator) di Custody Gas Station (CGS-1).',
-      'Menyoroti status aset, ketergantungan vendor, dan kelengkapan data kalibrasi yang menyangkut keselamatan serta kepatuhan.',
-      'Hasil akhir disajikan sebagai dashboard Looker Studio.']),
-    (7.0, 'STUDI KASUS 2', 'Kinerja Penjualan Ritel Online',
-     ['Data penjualan B2C agregat mingguan sepanjang 2022–2026 (sekitar 3,5 tahun).',
-      'Menelusuri tren pertumbuhan, pendorong revenue, pola musiman, dan efektivitas diskon.',
-      'Hasil akhir disajikan sebagai dashboard interaktif Plotly.']),
-]
-for x, k, t, pts in cards:
-    notch(s, x, 2.5, 5.45, 4.1, fill=WHITE, line=LINE, line_w=1.25, sn=0.07)
-    box(s, x+0.32, 2.86, 0.6, 0.09, fill=CYAN)
-    text(s, x+0.32, 3.05, 4.8, 0.3, [[(k, 11, CYAN, FSEMI)]], sp_after=0)
-    text(s, x+0.32, 3.32, 4.8, 0.7, [[(t, 18, NAVY, FBLACK)]], sp_after=0, line=1.0)
-    bullet(s, x+0.32, 4.18, 4.85, 2.3, pts, sz=12.5, gap=9, mk=CYAN)
+notch(s, 0.9, 2.5, 11.53, 4.1, fill=WHITE, line=LINE, line_w=1.25, sn=0.04)
+box(s, 1.25, 2.9, 0.6, 0.09, fill=CYAN)
+text(s, 1.25, 3.1, 10.8, 0.3, [[('STUDI KASUS', 11, CYAN, FSEMI)]], sp_after=0)
+text(s, 1.25, 3.38, 10.8, 0.6, [[('Inventory Instrumen CGS-1', 22, NAVY, FBLACK)]], sp_after=0, line=1.0)
+bullet(s, 1.25, 4.35, 10.9, 2.0, [
+    'Custody Gas Station (CGS-1) mengoperasikan banyak instrumen lapangan (transmitter, valve, actuator) yang menopang keandalan, keselamatan, dan kepatuhan operasi.',
+    'Analisis menyoroti status aset, ketergantungan vendor, dan kelengkapan data kalibrasi.',
+    'Hasil akhir disajikan sebagai dashboard pemantauan Looker Studio.',
+], sz=13.5, gap=11, mk=CYAN)
 
 # ---------- 4. CRISP-DM ----------
 n += 1; s = slide(); header(s, 'Metodologi', 'KERANGKA KERJA ', 'CRISP-DM', n)
 text(s, 0.9, 1.62, 11.6, 0.4,
-     [[('Kedua studi kasus dikerjakan melalui enam fase CRISP-DM secara berurutan, mulai dari pemahaman bisnis hingga penyajian dashboard.', 13, GREY, FBODY)]], sp_after=0, line=1.1)
+     [[('Studi kasus ini dikerjakan melalui enam fase CRISP-DM secara berurutan, mulai dari pemahaman bisnis hingga penyajian dashboard.', 13, GREY, FBODY)]], sp_after=0, line=1.1)
 phases = [
     ('1', 'Business\nUnderstanding', 'Tujuan & pertanyaan bisnis'),
     ('2', 'Data\nUnderstanding', 'Memuat data, menilai kualitas'),
@@ -182,7 +174,7 @@ text(s, 0.9, 5.35, 11.6, 0.5,
 n += 1; s = slide(); header(s, 'Manajemen Proyek', 'PELACAKAN PEKERJAAN ', 'GITHUB PROJECTS', n)
 text(s, 0.9, 1.62, 11.6, 0.85,
      [[('Seluruh pekerjaan kelompok dikelola lewat ', 14, DARK, FBODY), ('board kanban GitHub Projects', 14, CYAN, FSEMI),
-       ('. Setiap fase CRISP-DM dari kedua studi kasus dipecah menjadi kartu tugas, lalu dilacak perpindahannya dari ', 14, DARK, FBODY),
+       ('. Setiap fase CRISP-DM dipecah menjadi kartu tugas, lalu dilacak perpindahannya dari ', 14, DARK, FBODY),
        ('Todo → In Progress → Done', 14, NAVY, FSEMI), ('.', 14, DARK, FBODY)]], sp_after=0, line=1.18)
 why = [
     ('Transparansi', 'Status setiap pekerjaan terlihat dalam satu layar, sehingga tidak ada tugas yang terlewat.'),
@@ -221,36 +213,36 @@ for v, lb, c in stats:
     yy += 1.06
 text(s, rx, yy+0.12, 3.45, 1.6,
      [[('16 kartu total', 13, CYAN, FSEMI)],
-      [('Tiap kartu mewakili satu fase CRISP-DM dari kedua studi kasus, ditambah setup, dokumentasi, dan pengumpulan.', 11, GREY, FBODY)]],
+      [('Tiap kartu mewakili satu fase pekerjaan, dari analisis hingga setup, dokumentasi, dan pengumpulan.', 11, GREY, FBODY)]],
      sp_after=6, line=1.15)
 
 # ---------- 7. WBS ----------
 n += 1; s = slide(); header(s, 'Manajemen Proyek', 'PEMETAAN TUGAS KE FASE ', 'CRISP-DM', n)
 rows = [
-    ('Fase CRISP-DM', 'Inventory CGS-1', 'Penjualan Ritel', True),
-    ('Business Understanding', 'Menyusun 3 pertanyaan bisnis', 'Menyusun 4 pertanyaan bisnis', False),
-    ('Data Understanding', 'Memuat Excel, memeriksa data hilang', 'Memuat data mingguan & kamus data', False),
-    ('Data Preparation', 'Membersihkan, menandai kalibrasi/serial', 'Menurunkan KPI: AOV, MA, disc%', False),
-    ('Modeling / Analisis', 'Status, vendor, cakupan kalibrasi', 'Tren, musiman, AOV, diskon', False),
-    ('Evaluation', 'Gap kalibrasi, watchlist aset', 'Pertumbuhan, over-discounting', False),
-    ('Deployment', 'Dashboard Looker Studio', 'Dashboard Plotly interaktif', False),
+    ('Fase CRISP-DM', 'Pekerjaan pada studi kasus Inventory CGS-1', True),
+    ('Business Understanding', 'Menyusun 3 pertanyaan bisnis (status, vendor, kalibrasi)', False),
+    ('Data Understanding', 'Memuat data Excel instrumen, memeriksa data hilang', False),
+    ('Data Preparation', 'Membersihkan data, menandai flag kalibrasi & serial number', False),
+    ('Modeling / Analisis', 'Status aset, ketergantungan vendor, cakupan kalibrasi', False),
+    ('Evaluation', 'Gap kalibrasi, watchlist aset prioritas', False),
+    ('Deployment', 'Dashboard pemantauan Looker Studio', False),
 ]
-x0, y0 = 0.9, 1.75; cw = [4.0, 3.85, 3.78]; rh = 0.7
+x0, y0 = 0.9, 1.75; cw = [4.6, 6.93]; rh = 0.7
 yy = y0
-for ri, (a,b,c,hd) in enumerate(rows):
+for ri, (a,b,hd) in enumerate(rows):
     xx = x0
-    for ci, val in enumerate((a,b,c)):
+    for ci, val in enumerate((a,b)):
         fill = NAVY if hd else (PANEL if ri%2 else WHITE)
         box(s, xx, yy, cw[ci], rh, fill=fill, line=LINE, line_w=0.75)
         col = WHITE if hd else (NAVY if ci==0 else DARK)
         fnt = FSEMI if (hd or ci==0) else FBODY
-        text(s, xx+0.18, yy, cw[ci]-0.3, rh, [[(val, 12 if not hd else 13, col, fnt)]], anchor=MSO_ANCHOR.MIDDLE, sp_after=0, line=1.0)
+        text(s, xx+0.18, yy, cw[ci]-0.3, rh, [[(val, 12.5 if not hd else 13, col, fnt)]], anchor=MSO_ANCHOR.MIDDLE, sp_after=0, line=1.0)
         xx += cw[ci]
     yy += rh
 box(s, x0, y0+rh, 0.06, rh*6, fill=CYAN)
 
 # ---------- 8. Inventory BU ----------
-n += 1; s = slide(); header(s, 'Studi Kasus 1 · Inventory CGS-1', 'KONTEKS & ', 'PERTANYAAN BISNIS', n)
+n += 1; s = slide(); header(s, 'Studi Kasus · Inventory CGS-1', 'KONTEKS & ', 'PERTANYAAN BISNIS', n)
 text(s, 0.9, 1.66, 11.6, 1.0,
      [[('CGS-1 (Custody Gas Station)', 14, CYAN, FSEMI),
        (' mengoperasikan banyak instrumen lapangan yang menjadi tumpuan keandalan, keselamatan, dan kepatuhan operasi. Datanya sudah tersedia, tetapi belum diolah dan kualitasnya belum pernah dievaluasi.', 14, DARK, FBODY)]],
@@ -268,7 +260,7 @@ for k, t, d in qs:
     yy += 1.16
 
 # ---------- 9. Inventory findings ----------
-n += 1; s = slide(); header(s, 'Studi Kasus 1 · Inventory CGS-1', 'TEMUAN & ', 'REKOMENDASI', n)
+n += 1; s = slide(); header(s, 'Studi Kasus · Inventory CGS-1', 'TEMUAN & ', 'REKOMENDASI', n)
 text(s, 0.9, 1.6, 5.7, 0.4, [[('TEMUAN UTAMA', 11.5, CYAN, FSEMI)]], sp_after=0)
 bullet(s, 0.9, 2.02, 5.75, 4.6, [
     'Mayoritas instrumen berstatus Active (~94%), menandakan ketersediaan aset yang baik.',
@@ -289,78 +281,14 @@ text(s, 7.35, 5.45, 4.7, 0.9,
      [[('Keterbatasan:  ', 11, CYAN, FSEMI), ('data masih terbatas (18 instrumen, satu area, satu titik waktu), sehingga analisis bersifat deskriptif dan belum prediktif.', 11, GREY, FBODY)]],
      sp_after=0, line=1.12)
 
-# ---------- 10. Sales BU ----------
-n += 1; s = slide(); header(s, 'Studi Kasus 2 · Penjualan Ritel', 'KONTEKS & ', 'PERTANYAAN BISNIS', n)
-text(s, 0.9, 1.66, 11.6, 0.9,
-     [[('Sebuah retailer online B2C', 14, CYAN, FSEMI),
-       (' ingin memahami kinerja penjualannya selama kurang lebih 3,5 tahun (data agregat mingguan dan anonim) sebagai dasar keputusan stok, promo, dan target penjualan.', 14, DARK, FBODY)]],
-     sp_after=0, line=1.18)
-qs = [
-    ('Q1', 'Tren & pertumbuhan', 'Bagaimana arah tren revenue, transaksi, dan jumlah pelanggan dari waktu ke waktu?'),
-    ('Q2', 'Pendorong revenue', 'Pertumbuhan lebih ditarik oleh volume transaksi atau nilai per transaksi (AOV)?'),
-    ('Q3', 'Pola musiman', 'Adakah bulan ramai dan sepi yang bisa dipakai merencanakan stok dan campaign?'),
-    ('Q4', 'Efektivitas diskon', 'Seberapa besar pengaruh strategi diskon terhadap revenue?'),
-]
-yy = 2.8
-for k, t, d in qs:
-    notch(s, 0.9, yy, 0.92, 0.86, fill=NAVY, sn=0.22)
-    text(s, 0.9, yy+0.02, 0.92, 0.86, [[(k, 18, CYAN, FBLACK)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, sp_after=0)
-    text(s, 2.0, yy+0.08, 10.3, 0.8, [[(t, 15.5, NAVY, FSEMI)], [(d, 12, GREY, FBODY)]], sp_after=2, line=1.05)
-    yy += 0.98
-
-# ---------- 11. Sales dashboard ----------
-n += 1; s = slide(); header(s, 'Studi Kasus 2 · Penjualan Ritel', 'DASHBOARD ', 'INTERAKTIF (PLOTLY)', n)
-img = os.path.join(PREV, 'plotly_dashboard_preview.png')
-iw, ih = PImage.open(img).size
-disp_h = 5.15; disp_w = disp_h*iw/ih
-notch(s, 0.85, 1.5, disp_w+0.12, disp_h+0.12, fill=None, line=LINE, line_w=1.25, sn=0.03)
-s.shapes.add_picture(img, IN(0.91), IN(1.56), IN(disp_w), IN(disp_h))
-rx = 0.91 + disp_w + 0.45
-text(s, rx, 1.66, 12.4-rx, 0.4, [[('KOMPONEN', 11.5, CYAN, FSEMI)]], sp_after=0)
-bullet(s, rx, 2.1, 12.4-rx, 4.4, [
-    'Scorecard KPI: revenue, transaksi, AOV, dan rata-rata diskon.',
-    'Tren revenue mingguan beserta rata-rata 4 minggu (range slider dan dropdown tahun).',
-    'Revenue per tahun dan pola musiman per bulan.',
-    'AOV per tahun dan scatter diskon terhadap revenue.',
-], sz=12.5, gap=10, mk=CYAN)
-text(s, rx, 5.45, 12.4-rx, 0.9,
-     [[('Interaktif:  ', 11.5, CYAN, FSEMI), ('hover, zoom, dan filter per tahun, langsung di dalam notebook.', 11.5, GREY, FBODY)]],
-     sp_after=0, line=1.12)
-
-# ---------- 12. Sales findings ----------
-n += 1; s = slide(); header(s, 'Studi Kasus 2 · Penjualan Ritel', 'TEMUAN & ', 'REKOMENDASI', n)
-kpis = [('5×', 'Pertumbuhan revenue\n2023 → 2025'), ('AOV ↑', 'Pendorong utama\n(bukan volume)'),
-        ('~1,3', 'Unit per transaksi\n(keranjang kecil)'), ('Jun–Jul', 'Puncak musiman\n(juga Januari)')]
-x = 0.9
-for v, lb in kpis:
-    notch(s, x, 1.6, 2.78, 1.5, fill=WHITE, line=LINE, line_w=1.25, sn=0.12)
-    box(s, x+0.25, 1.9, 0.5, 0.08, fill=CYAN)
-    text(s, x+0.25, 2.05, 2.4, 0.5, [[(v, 25, NAVY, FBLACK)]], sp_after=0)
-    text(s, x+0.25, 2.58, 2.5, 0.7, [[(ln, 11, GREY, FBODY)] for ln in lb.split('\n')], sp_after=0, line=1.0)
-    x += 2.92
-text(s, 0.9, 3.42, 5.7, 0.4, [[('TEMUAN', 11.5, CYAN, FSEMI)]], sp_after=0)
-bullet(s, 0.9, 3.84, 5.75, 3.0, [
-    'Revenue tahunan tumbuh sekitar 5 kali lipat dalam dua tahun (2023 → 2025).',
-    'Pendorong utamanya adalah kenaikan nilai per transaksi (AOV), bukan semata jumlah transaksi.',
-    'Diskon belum efektif: rata-rata mencapai ~36%, tetapi korelasinya terhadap revenue mendekati nol, mengindikasikan over-discounting.',
-], sz=12.5, gap=9, mk=CYAN)
-notch(s, 7.0, 3.42, 5.43, 3.18, fill=PANEL, line=LINE, line_w=1.25, sn=0.06)
-text(s, 7.35, 3.62, 4.8, 0.4, [[('REKOMENDASI', 11.5, CYAN, FSEMI)]], sp_after=0)
-bullet(s, 7.35, 4.06, 4.8, 2.5, [
-    'Jaga momentum AOV lewat bundling dan upsell, mengingat keranjang masih sekitar 1,3 item.',
-    'Evaluasi strategi diskon dengan menguji pengurangan diskon dan mengukur dampaknya terhadap revenue.',
-    'Manfaatkan puncak musiman (Juni–Juli dan Januari) untuk perencanaan stok dan promo.',
-    'Dorong akuisisi dan retensi pelanggan karena jumlahnya cenderung stagnan.',
-], sz=12, gap=8, mk=CYAN)
-
-# ---------- 13. Kesimpulan ----------
+# ---------- 10. Kesimpulan ----------
 n += 1; s = slide(); header(s, 'Penutup', 'KESIMPULAN', '', n)
 bullet(s, 0.9, 1.85, 11.5, 4.2, [
-    'Pendekatan CRISP-DM berhasil mengubah dua dataset mentah menjadi dashboard pemantauan yang menjawab pertanyaan bisnis nyata.',
+    'Pendekatan CRISP-DM berhasil mengubah dataset instrumen mentah menjadi dashboard pemantauan yang menjawab pertanyaan bisnis nyata.',
     'Inventory CGS-1: ketersediaan aset tergolong baik (~94% aktif), tetapi gap data kalibrasi perlu segera ditindaklanjuti demi keselamatan dan kepatuhan.',
-    'Penjualan ritel: pertumbuhan kuat (~5×) ditopang kenaikan AOV, sementara strategi diskon perlu dievaluasi karena terindikasi over-discounting.',
+    'Instrumen Active yang belum berkalibrasi menjadi watchlist prioritas, dan sebagian Serial Number masih perlu dilengkapi untuk keterlacakan aset.',
     'Manajemen proyek lewat GitHub Projects menjaga pekerjaan kelompok tetap transparan, terbagi rapi, dan terlacak (12 selesai, 2 berjalan, 2 antre).',
-    'Langkah berikutnya: membersihkan outlier pada data penjualan dan menuntaskan dashboard Looker Studio untuk inventory.',
+    'Langkah berikutnya: menuntaskan dashboard Looker Studio dan melengkapi data kalibrasi instrumen prioritas.',
 ], sz=14.5, gap=16, mk=CYAN, line=1.18)
 
 # ---------- 14. Thanks (dark) ----------
