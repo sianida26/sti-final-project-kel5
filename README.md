@@ -5,10 +5,19 @@ Dua studi kasus analitik data dengan pendekatan **CRISP-DM** dan dashboard inter
 
 ## Deliverable
 
-| Notebook | Studi Kasus | Pendekatan | Output Dashboard |
-| --- | --- | --- | --- |
-| [Inventory CGS-1](Final-Project-STI-Kel5-Inventory-CGS1-enriched.ipynb) | Monitoring inventory instrumen Custody Gas Station (CGS-1) | CRISP-DM | Looker Studio |
-| [Sales Analysis](Final-Project-STI-Kel5-Sales-Analysis.ipynb) | Analisis kinerja penjualan ritel online (2022-2026) | CRISP-DM | Plotly (inline) |
+| Notebook | Studi Kasus | Pendekatan | Output Dashboard | Buka di Colab |
+| --- | --- | --- | --- | --- |
+| [Inventory CGS-1](Final-Project-STI-Kel5-Inventory-CGS1-enriched.ipynb) | Monitoring inventory instrumen Custody Gas Station (CGS-1) | CRISP-DM | Looker Studio | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sianida26/sti-final-project-kel5/blob/main/Final-Project-STI-Kel5-Inventory-CGS1-enriched.ipynb) |
+| [Sales Analysis](Final-Project-STI-Kel5-Sales-Analysis.ipynb) | Analisis kinerja penjualan ritel online (2022-2026) | CRISP-DM | Plotly (inline) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sianida26/sti-final-project-kel5/blob/main/Final-Project-STI-Kel5-Sales-Analysis.ipynb) |
+
+### Colab dan GitHub
+- GitHub menampilkan notebook (`.ipynb`) langsung di browser, lengkap dengan output sel.
+- Klik badge **Open in Colab** untuk membuka notebook ini di Google Colab dan menjalankannya.
+- Dari Colab, simpan balik ke repo lewat **File > Save a copy in GitHub** (pilih repo `sianida26/sti-final-project-kel5`, branch `main`).
+
+## Presentasi
+
+Deck presentasi final: [Final-Project-STI-Kel5-Presentation.pdf](Final-Project-STI-Kel5-Presentation.pdf) ([sumber PPTX](Final-Project-STI-Kel5-Presentation.pptx)).
 
 ## Struktur
 
