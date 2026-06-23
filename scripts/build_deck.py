@@ -107,8 +107,8 @@ text(s, 0.97, 4.85, 11, 0.35, [[('MAGISTER MANAJEMEN TEKNOLOGI · INSTITUT TEKNO
 notch(s, 0.95, 5.55, 7.3, 1.25, fill=WHITE, line=LINE, line_w=1.25, sn=0.12)
 text(s, 1.25, 5.68, 6.9, 1.05,
      [[('KELOMPOK 5', 11, CYAN, FSEMI)],
-      [('Moch Chesa Nur Hidayat', 14, NAVY, FSEMI), ('    ·    [Anggota 2]    ·    [Anggota 3]', 13, GREY, FBODY)],
-      [('GitHub: sianida26, Misbahulmunir26, …     |     Dosen: [isi nama dosen]', 10, GREY, FBODY)]],
+      [('Moch Chesa Nur Hidayat  ·  Misbahul Munir Dwi Julianto  ·  Eko Yunianto', 11.5, NAVY, FSEMI)],
+      [('Dosen Pengampu: Dr. Agus Budi Raharjo     |     GitHub: sianida26, Misbahulmunir26', 10, GREY, FBODY)]],
      sp_after=3, line=1.1)
 box(s, 9.55, 5.55, 2.85, 1.25, fill=PANEL, shape=MSO_SHAPE.SNIP_1_RECTANGLE, snip=0.16)
 text(s, 9.75, 5.78, 2.5, 0.8, [[('23', 30, CYAN, FBLACK)], [('Juni 2026', 13, NAVY, FSEMI)]], sp_after=0, line=1.0)
